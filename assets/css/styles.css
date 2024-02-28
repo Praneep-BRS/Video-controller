@@ -1,0 +1,230 @@
+:root {
+  --primary-color: #35a7bb;
+  --chathams_blue: #35a7bb;
+  --tamarillo: #991e14;
+  --yellow_sea: #fead06;
+  --key_dimensions: 50px;
+  --key_border: 10px;
+  --key_gap: 10px;
+  --rows-gap: 6px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url("../images/bg.png");
+  background-size: auto;
+  background-size: cover;
+}
+
+.btn {
+  width: 130px;
+  height: 40px;
+  font-size: 1.1em;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  border-radius: 5px;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 10px -3px #39a2db;
+  color: #ffffffc4;
+}
+
+.btn:active {
+  transition: all 0.2s;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 10px -3px #39a2db;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  color: floralwhite;
+}
+
+li {
+  list-style: none;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(29, 28, 28, 0.61);
+  border-radius: 5px;
+  height: 4px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* NAVBAR STYLING STARTS */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 45px;
+  background: var(--primary-color);
+}
+
+/* Main container*/
+
+.video-container {
+  max-width: 700px;
+  height: 398px;
+  margin: 40px auto;
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.video-container video {
+  width: 100%;
+}
+.play-controller {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.01) 0%,
+    rgba(0, 0, 0, 0.3) 35%,
+    rgba(0, 0, 0, 0.6) 60%
+  );
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 0 5px;
+  transform: translateY(41px);
+  transition: transform 0.5s;
+}
+.play-controller:hover {
+  transform: translateY(0);
+}
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(150, 149, 149, 0.5);
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+}
+.progress-bar-filled {
+  width: 0;
+  height: 100%;
+  background-color: var(--primary-color);
+  flex: 0;
+  flex-basis: auto;
+}
+.play-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 10px;
+}
+:where(.controls-left, .controls-right, .controls-center):where(*) {
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+.controls-center input {
+  width: 220px;
+}
+.play-pause-btns,
+.audio-btns {
+  position: relative;
+}
+.play-pause-btns .ph-pause,
+.audio-btns .ph-speaker-simple-slash {
+  position: absolute;
+  left: 0;
+}
+.ph-pause,
+.ph-rewind,
+.ph-fast-forward,
+.ph-corners-out,
+.ph-play,
+.ph-speaker-simple-slash,
+.ph-speaker-simple-high {
+  color: #fff;
+  font-size: 16px;
+}
+.hidden {
+  visibility: hidden;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  background: var(--primary-color);
+  display: flex;
+  justify-content: center;
+}
+
+.theme-switch {
+  margin: 0 5px;
+  padding: 10px;
+  font-size: 0.5rem;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.theme-switch-chathams_blue {
+  background-color: var(--chathams_blue);
+}
+
+.theme-switch-chathams_blue:hover {
+  box-shadow: 2px 2px 2px var(--chathams_blue);
+}
+
+.theme-switch-tamarillo {
+  background-color: var(--tamarillo);
+}
+
+.theme-switch-tamarillo:hover {
+  box-shadow: 2px 2px 2px var(--tamarillo);
+}
+
+.theme-switch-yellow_sea {
+  background-color: var(--yellow_sea);
+}
+
+.theme-switch-yellow_sea:hover {
+  box-shadow: 2px 2px 2px var(--yellow_sea);
+}
