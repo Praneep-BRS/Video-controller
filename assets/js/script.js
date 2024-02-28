@@ -63,11 +63,25 @@ forwardIcon.addEventListener("click", () => {
 
 volumeSlider.value = videoViewer.value;
 updateSliderBackground(volumeSlider);
+toggleMuteUnmuteIcons();
 
 volumeSlider.addEventListener("input", () => {
-  updateSliderBackground(volumeSlider);
   videoViewer.volume = volumeSlider.value;
+  updateSliderBackground(volumeSlider);
+  toggleMuteUnmuteIcons();
 });
+
+function toggleMuteUnmuteIcons() {
+  if (videoViewer.volume === 0) {
+    // If volume is 0, show mute icon
+    mute.classList.remove("hidden");
+    unmute.classList.add("hidden");
+  } else {
+    // If volume is greater than 0, show unmute icon
+    unmute.classList.remove("hidden");
+    mute.classList.add("hidden");
+  }
+}
 
 playbackRateSlider.value = videoViewer.playbackRate;
 updateSliderBackground(playbackRateSlider);
